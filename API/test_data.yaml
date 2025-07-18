@@ -1,0 +1,6 @@
+URL: https://pokeapi.co/api/v2/pokemon
+REQ_BODY: {
+      "name": "morpheus",
+      "job": "leader"
+  }
+HEADERS:  {'x-api-key': 'reqres-free-v1'}
