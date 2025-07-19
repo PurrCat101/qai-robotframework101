@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Structure</title>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Web Fundamentals Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#form-section">Forms</a></li>
+                <li><a href="#table-section">Tables</a></li>
+                <li><a href="#interactive-section">Interactive Elements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Form Elements</h2>
+            <form id="demo-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Interests:</label>
+                    <select id="interests" name="interests" multiple>
+                        <option value="coding">Coding</option>
+                        <option value="reading">Reading</option>
+                        <option value="gaming">Gaming</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="submit-btn">Submit</button>
+                <button type="reset" id="reset-btn">Reset</button>
+            </form>
+        </section>
+
+        <section id="table-section">
+            <h2>Table Example</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="interactive-section">
+            <h2>Interactive Elements</h2>
+            <div class="interactive-demo">
+                <button id="toggle-btn">Toggle Message</button>
+                <p id="hidden-message">This message can be toggled!</p>
+                
+                <div class="counter-container">
+                    <button id="decrement">-</button>
+                    <span id="counter">0</span>
+                    <button id="increment">+</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created for Web Automation Testing Practice</p>
+    </footer>
+</body>
+</html>
