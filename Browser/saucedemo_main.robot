@@ -7,8 +7,8 @@ Variables    test_data.yaml
 Open website and buy "Sauce Labs Onesie"
     Open Browser And Go To The Website    ${URL}
     Log In To Website    ${USERNAME}    ${PASSWORD}
-    Add Product To Cart    Sauce Labs Onesie
     Add Product To Cart    Sauce Labs Fleece Jacket
+    Add Product To Cart    Sauce Labs Bike Light
     Verify Item Price In Cart    Sauce Labs Onesie    $7.99
     Verify Item Price In Cart    Sauce Labs Fleece Jacket    $49.99
     Proceed With Payment    ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
