@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Practice Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Practice Area!</h1>
+        <p class="subtitle">A playground for XPath and Automation.</p>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>User Information Form</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">--Select--</option>
+                        <option value="th">Thailand</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes" checked>
+                    <label for="subscribe">Subscribe to newsletter</label>
+                </div>
+                <button type="submit" class="btn primary-btn">Submit Form</button>
+                <button type="reset" class="btn secondary-btn">Reset Form</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="product-list-section">
+            <h2>Product List</h2>
+            <div class="product-item" id="product-1">
+                <h3>Product Alpha</h3>
+                <p class="price">Price: $29.99</p>
+                <button class="add-to-cart-btn" data-product-id="alpha-101">Add to Cart</button>
+            </div>
+            <div class="product-item" id="product-2">
+                <h3>Product Beta</h3>
+                <p class="price">Price: $49.99</p>
+                <button class="add-to-cart-btn" data-product-id="beta-102">Add to Cart Now</button>
+            </div>
+            <div class="product-item" id="product-3">
+                <h3>Product Gamma</h3>
+                <p class="price">Price: $19.50</p>
+                <button class="add-to-cart-btn" data-product-id="gamma-103">Add to Cart</button>
+            </div>
+            <div class="product-item hidden-item" style="display: none;">
+                <h3>Hidden Product</h3>
+                <p>You can't see me!</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="dynamic-content-section">
+            <h2>Dynamic Content Area</h2>
+            <p>This paragraph might change or disappear:</p>
+            <p id="dynamic-text">This is some dynamic text that might change.</p>
+            <button id="toggleTextBtn" class="btn">Toggle Text</button>
+            <p class="message" style="display: none;">A message will appear here!</p>
+        </section>
+
+        <hr>
+
+        <section id="table-section">
+            <h2>Data Table</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row-1">
+                        <td>101</td>
+                        <td>Alice</td>
+                        <td>Active</td>
+                        <td><button class="action-btn">Edit</button><button class="action-btn">Delete</button></td>
+                    </tr>
+                    <tr id="row-2">
+                        <td>102</td>
+                        <td>Bob</td>
+                        <td>Inactive</td>
+                        <td><button class="action-btn">Edit</button><button class="action-btn">Delete</button></td>
+                    </tr>
+                    <tr id="row-3">
+                        <td>103</td>
+                        <td>Charlie</td>
+                        <td>Pending</td>
+                        <td><button class="action-btn">Edit</button><button class="action-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!-- <section id="xpath-no-id-class-section">
+        <h2>Products without IDs or Classes</h2>
+        <div class="product-group-no-id-class">
+            <div>
+                <h3>Old Laptop Model</h3>
+                <p>Price: $500</p>
+                <button>Buy Now</button>
+            </div>
+            <div>
+                <h3>Desktop PC Standard</h3>
+                <p>Price: $900</p>
+                <button>Buy Now</button>
+            </div>
+            <div>
+                <h3>Smartphone Latest</h3>
+                <p>Price: $1200</p>
+                <button>Add to Cart</button>
+            </div>
+            <div>
+                <h3>Gaming Console Pro</h3>
+                <p>Price: $450</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section> -->
+    <section id="xpath-no-id-class-section">
+        <h2>Products with Deeper Nesting and Item Classes</h2>
+        <div class="product-group-no-id-class">
+            <div class="inventory_item">
+                <div>
+                    <h3>Old Laptop Model</h3>
+                </div>
+                <p>Price: $500</p>
+                <div> <button>Buy Now</button>
+                </div>
+            </div>
+
+            <div class="inventory_item">
+                <div>
+                    <h3>Desktop PC Standard</h3>
+                </div>
+                <p>Price: $900</p>
+                <div> <button>Buy Now</button>
+                </div>
+            </div>
+
+            <div class="inventory_item">
+                <div>
+                    <h3>Smartphone Latest</h3>
+                </div>
+                <p>Price: $1200</p>
+                <div> <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="inventory_item">
+                <div>
+                    <h3>Gaming Console Pro</h3>
+                </div>
+                <p>Price: $450</p>
+                <div> <button>Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Automation Practice Page</p>
+        <a href="https://www.google.com" target="_blank">Visit Google</a>
+    </footer>
+
+    <script>
+        document.getElementById('toggleTextBtn').addEventListener('click', function () {
+            const dynamicText = document.getElementById('dynamic-text');
+            const message = document.querySelector('.message');
+            if (dynamicText.style.display === 'none') {
+                dynamicText.style.display = 'block';
+                message.style.display = 'none';
+                dynamicText.textContent = 'This is the original dynamic text.';
+            } else {
+                dynamicText.style.display = 'none';
+                message.style.display = 'block';
+                message.textContent = 'Text was toggled off! A new message appeared.';
+            }
+        });
+    </script>
+</body>
+
+</html>
