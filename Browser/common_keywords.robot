@@ -29,13 +29,17 @@ Log In To Website
     Wait Until Page Contains    Products
 
 Add Product To Cart
+    [Documentation]    Get unique element with product_name as Argument
     [Arguments]    ${product_name}
     Wait Until Element Is Visible And Click Element    xpath=//div[@class="inventory_item"][div/div/a/div[text()="${product_name}"]]//button[text()="Add to cart"]
 
 Verify Item Price In Cart
     [Arguments]    ${product_name}    ${product_price}
     Wait Until Element Is Visible And Click Element    xpath=//a[@class="shopping_cart_link"]
+
+    # Get unique element with product_name 
     Wait Until Element Is Visible    xpath=//div[@class="cart_item_label"][a/div[text()="${product_name}"]]
+
     ${item_price}=    Get Text    xpath=//div[@class="cart_item_label"][a/div[text()="${product_name}"]]//div[@class="inventory_item_price"]
     Should Be Equal    ${product_price}    ${item_price}
     Log To Console    The ${product_name} is ${item_price}
@@ -51,15 +55,16 @@ Proceed With Payment
 
 Validate The Total Price
     ${item_total_price}=    Get Text    xpath=//div[@class="summary_subtotal_label"]
-    ${item_total_price}=    Get Regexp Matches    ${item_total_price}    (?<=\\$).*
+    ${item_total_price}=    Get Regexp Matches    ${item_total_price}    \\d+\\.\\d{2}
 
     ${tax}=    Get Text    xpath=//div[@class="summary_tax_label"]
-    ${tax}=    Get Regexp Matches    ${tax}    (?<=\\$).*
+    ${tax}=    Get Regexp Matches    ${tax}    \\d+\\.\\d{2}
 
     ${total_from_website}=    Get Text    xpath=//div[@class="summary_total_label"]
-    ${total_from_website}=    Get Regexp Matches    ${total_from_website}    (?<=\\$).*
+    ${total_from_website}=    Get Regexp Matches    ${total_from_website}    \\d+\\.\\d{2}
     ${total_from_website}=    Evaluate    float(${total_from_website}[0])
 
+    # Calculation
     ${total_sum}=    Evaluate    round(${item_total_price}[0] + ${tax}[0], 2)
 
     Should Be Equal    ${total_from_website}    ${total_sum}
