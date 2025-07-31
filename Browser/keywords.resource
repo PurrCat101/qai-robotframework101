@@ -22,8 +22,8 @@ Click Login button
 
 Add Product To Cart
     [Arguments]    ${product_name}
-    Wait Until Element Is Visible    xpath=//div[@class="inventory_item"][div/div/a/div[text()="${product_name}"]]//button[text()="Add to cart"]
-    Click Element    xpath=//div[@class="inventory_item"][div/div/a/div[text()="${product_name}"]]//button[text()="Add to cart"]
+    Wait Until Element Is Visible    xpath=//div[@class="inventory_item"][.//div[text()="${product_name}"]]//button[text()="Add to cart"]
+    Click Element    xpath=//div[@class="inventory_item"][.//div[text()="${product_name}"]]//button[text()="Add to cart"]
 
 Go to Cart page
     Click Element    xpath=//a[@class="shopping_cart_link"]
@@ -49,6 +49,7 @@ Go to Checkout Overview page
     Click Element    id=continue
 
 Validate Total Price
+    [Arguments]    ${expected_total}
     ${item_total_price}=    Get Text    xpath=//div[@class="summary_subtotal_label"]
     ${item_total_price}=    Get Regexp Matches    ${item_total_price}    \\d+\\.\\d{2}
 
@@ -61,7 +62,9 @@ Validate Total Price
 
     ${total_sum}=    Evaluate    round(${item_total_price}[0] + ${tax}[0], 2)
 
-    Should Be Equal    ${total_from_website}    ${total_sum}   
+    ${expected_total_float}=    Get Regexp Matches    ${expected_total}    \\d+\\.\\d{2}
+    ${expected_total_float}=    Evaluate    float(${expected_total_float}[0])
+    Should Be Equal    ${expected_total_float}    ${total_sum}
 
 Finish checkout
     Click Element    id=finish

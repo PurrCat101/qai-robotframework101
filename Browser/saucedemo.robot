@@ -13,6 +13,7 @@ ${ZIP_CODE}    12345
 
 *** Test Cases ***
 Open website and buy "Sauce Labs Fleece Jacket"
+    [Tags]    buy Sauce Labs Fleece Jacket   
     Go to website saucedemo    url=${URL}    browser=${BROWSER}
     Input username and password    username=${USERNAME}    password=${PASSWORD}
     Click Login button
@@ -22,11 +23,12 @@ Open website and buy "Sauce Labs Fleece Jacket"
     Proceed checkout
     Input Information    ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Go to Checkout Overview page
-    Validate total price
+    Validate total price    $53.99
     Finish checkout
     Verify completion message
 
 Open website and buy "Sauce Labs Bike Light" and "Sauce Labs Bolt T-Shirt"
+    [Tags]    buy Sauce Labs Bike Light and Sauce Labs Bolt T-Shirt
     Go to website saucedemo    url=${URL}    browser=${BROWSER}
     Input username and password    username=${USERNAME}    password=${PASSWORD}
     Click Login button
@@ -38,7 +40,7 @@ Open website and buy "Sauce Labs Bike Light" and "Sauce Labs Bolt T-Shirt"
     Proceed checkout
     Input Information    ${FIRST_NAME}    ${LAST_NAME}    ${ZIP_CODE}
     Go to Checkout Overview page
-    Validate total price
+    Validate total price    $28.06    
     Finish checkout
     Verify completion message
 
