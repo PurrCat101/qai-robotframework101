@@ -44,3 +44,10 @@ Open website and buy "Sauce Labs Bike Light" and "Sauce Labs Bolt T-Shirt"
     Finish checkout
     Verify completion message
 
+Open website and validate text Sauce Labs Backpack
+    [Tags]    validate Sauce Labs Backpack
+    Go to website saucedemo    url=${URL}    browser=${BROWSER}
+    Input username and password    username=performance_glitch_user   password=${PASSWORD}
+    Click Login button
+    Wait Until Element Is Visible    xpath=//button[@id='add-to-cart-sauce-labs-backpack']    10s
+    Page Should Contain    Sauce Labs Backpack
